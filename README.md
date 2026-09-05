@@ -6,7 +6,7 @@
 node convertLyrics.js test.txt
 ```
 
-같은 폴더에 `testToJson.txt`가 생성됩니다. 생성된 내용은 곡 JSON의 `lyricsLines` 값으로 사용할 수 있습니다.
+같은 폴더에 `testToJson.txt`가 생성됩니다. 생성된 배열을 곡 JSON의 `lyricsLines` 값 뒤에 붙여 넣어 사용합니다.
 
 ```json
 {

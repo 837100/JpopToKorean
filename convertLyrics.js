@@ -23,5 +23,5 @@ if (lyricsLines.at(-1) === '') {
     lyricsLines.pop();
 }
 
-fs.writeFileSync(outputPath, JSON.stringify({ lyricsLines }, null, 2) + '\n', 'utf8');
+fs.writeFileSync(outputPath, JSON.stringify(lyricsLines, null, 2) + '\n', 'utf8');
 console.log(`변환 완료: ${outputPath}`);
