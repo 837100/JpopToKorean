@@ -1,0 +1,42 @@
+{
+  "part-of-me": {
+    "title": "Part of me",
+    "videoId": "gw73chM9jIs",
+    "lyricsFile": "kashi/mrsgreenapple/part-of-me.txt"
+  },
+  "soranji": {
+    "title": "soranji",
+    "videoId": "44cICMd3jW4",
+    "lyricsFile": "kashi/mrsgreenapple/soranji.txt"
+  },
+  "watashi": {
+    "title": "私",
+    "videoId": "9ovwyTjzEfI",
+    "lyricsFile": "kashi/mrsgreenapple/watashi.txt"
+  },
+  "circle": {
+    "title": "Circle",
+    "videoId": "ggTVURqNlcs",
+    "lyricsFile": "kashi/mrsgreenapple/circle.txt"
+  },
+  "umbrella": {
+    "title": "umbrella",
+    "videoId": "6Ul-wFnquno",
+    "lyricsFile": "kashi/mrsgreenapple/umbrella.txt"
+  },
+  "darling": {
+    "title": "ダーリン",
+    "videoId": "L262NKlSl4s",
+    "lyricsFile": "kashi/mrsgreenapple/darling.txt"
+  },
+  "kudari": {
+    "title": "クダリ",
+    "videoId": "j7MPiIabcbE",
+    "lyricsFile": "kashi/mrsgreenapple/kudari.txt"
+  },
+  "the-white-lounge": {
+    "title": "The White Lounge (Live)",
+    "videoId": "yLpeZMTv430",
+    "lyricsFile": "kashi/mrsgreenapple/the-white-lounge.txt"
+  }
+}
