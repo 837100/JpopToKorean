@@ -17,8 +17,11 @@ function loadArtistSongs(artistDirectory) {
                     return response.json();
                 });
         })))
-        .then(songList => Object.fromEntries(songList.map(song => [
-            song.fileName.replace(/\.json$/, ''),
-            song
-        ])));
+        .then(songList => Object.fromEntries(songList.map(song => {
+            if (Array.isArray(song.lyricsLines)) {
+                song.lyrics = song.lyricsLines.join('\n');
+            }
+
+            return [song.fileName.replace(/\.json$/, ''), song];
+        })));
 }
