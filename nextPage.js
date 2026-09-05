@@ -15,7 +15,12 @@ if (matchedSong) {
 
     titleNavigater();
     fetch(matchedSong.lyricsFile)
-        .then(response => response.text())  // 텍스트 파일 읽어오기
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`가사 파일을 불러오지 못했습니다: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(data => {
             // 歌詞データ入れ込み
             document.getElementById('song-lyrics').textContent = data;

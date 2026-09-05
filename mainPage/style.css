@@ -1,69 +1,135 @@
-.article {
-    display: flex;
-    flex-direction: column;
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.result {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    /* 가로 방향 중앙 정렬 */
+.hero-section {
+    padding: 100px 20px;
     text-align: center;
-    /* 텍스트 정렬 */
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
 }
 
-/* 쿠팡 파트너스 광고
- */
-#ad-container {
-    width: 100%;
-    /* 부모 요소의 너비를 따라감 */
-    max-width: 480px;
-    /* 최대 너비 제한 */
-    height: auto;
-    /* 높이는 비율에 맞게 자동 조절 */
-    margin: 0 auto;
-    /* 가운데 정렬 */
-}
-
-.start {
-    flex-direction: column;
-    align-items: center;
-    /* 가로 방향 중앙 정렬 */
-    text-align: center;
-    justify-content: center;
-    /* 텍스트 정렬 */
-}
-
-#img {
-    width: 300px;
-    height: 300px;
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 20px;
-    /* 이미지와 텍스트 간 간격 */
+    background: linear-gradient(to right, #fff, #a5a5a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
 }
 
-.overlay {
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.artist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: left;
+    border-left: 5px solid #fff;
+    padding-left: 15px;
+}
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.artist-card {
+    position: relative;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: white;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.artist-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-image {
+    transform: scale(1.1);
+}
+
+.artist-overlay {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(105deg,
-            transparent 40%, rgba(255, 219, 112, 0.8) 45%,
-            rgba(132, 50, 255, 0.6) 50%, transprent 54%);
-    filter: brightness(1.2) opacity(0.8);
-    mix-blend-mode: color-dodge;
-    background-size: 150% 150%;
-    background-position: 100%;
-    transition: background-position 0.2s ease-out;
-}
-
-.container {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    transition: background 0.3s ease;
 }
 
-/* 콘텐츠 스타일 */
-.content {
-    margin-left: 250px;
-    padding: 20px;
+.artist-card:hover .artist-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.artist-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.artist-view-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    width: fit-content;
+}
+
+.artist-card:hover .artist-view-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .artist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
 }
