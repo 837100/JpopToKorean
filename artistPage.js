@@ -25,10 +25,6 @@ Promise.all([
     document.title = `${artist.name} | J-Pop to Korean`;
     document.getElementById('artist-name').textContent = artist.name;
 
-    const artistHomeLink = document.getElementById('artist-home-link');
-    artistHomeLink.textContent = artist.name;
-    artistHomeLink.href = `artist.html?artist=${encodeURIComponent(artistKey)}`;
-
     document.getElementById('artist-card').style.backgroundImage = `url('${artist.image}')`;
     document.getElementById('artist-style').textContent = `
         body {
@@ -51,6 +47,8 @@ Promise.all([
     `;
 
     const songList = document.getElementById('song-list');
+    document.getElementById('song-count').textContent = `${Object.keys(songs).length}곡`;
+    songList.textContent = '';
     Object.entries(songs).forEach(([songKey, song]) => {
         const link = document.createElement('a');
         link.className = 'list-group-item list-group-item-action';
