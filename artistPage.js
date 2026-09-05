@@ -19,8 +19,7 @@ Promise.all([
         throw new Error('존재하지 않는 가수입니다.');
     }
 
-    return fetch(artist.metadataFile)
-        .then(response => requireJson(response, artist.metadataFile))
+    return loadArtistSongs(artist.directory)
         .then(songs => ({ artist, songs }));
 }).then(({ artist, songs }) => {
     document.title = `${artist.name} | J-Pop to Korean`;

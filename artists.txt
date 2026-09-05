@@ -1,7 +1,7 @@
 {
   "aimyon": {
     "name": "あいみょん",
-    "metadataFile": "aimyon.txt",
+    "directory": "aimyon",
     "songPage": "aimyon.html",
     "image": "img/aimyon.jpg",
     "background": "img/aimyon.jpg",
@@ -10,7 +10,7 @@
   },
   "mrsgreenapple": {
     "name": "Mrs. GREEN APPLE",
-    "metadataFile": "mrsgreenapple.txt",
+    "directory": "mrsgreenapple",
     "songPage": "mrsGreenApple.html",
     "image": "img/mrs.jpg",
     "background": "img/mrs.jpg",

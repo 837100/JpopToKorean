@@ -46,15 +46,10 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
 
+    <script src="songData.js"></script>
     <script>
         let songs = {};
-        const songsReady = fetch('aimyon.txt')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`곡 정보 파일을 불러오지 못했습니다: ${response.status}`);
-                }
-                return response.json();
-            })
+        const songsReady = loadArtistSongs('aimyon')
             .then(data => {
                 songs = data;
             })

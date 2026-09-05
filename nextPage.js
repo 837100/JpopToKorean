@@ -15,17 +15,7 @@ matchedSongReady.then(matchedSong => {
         document.getElementById('song-title').textContent = matchedSong.title;
 
         titleNavigater();
-        fetch(matchedSong.lyricsFile)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`가사 파일을 불러오지 못했습니다: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('song-lyrics').textContent = data;
-            })
-            .catch(error => console.error('Error loading lyrics:', error));
+        document.getElementById('song-lyrics').textContent = matchedSong.lyrics;
 
         // YouTube プレイヤーAPI スクリプトロード
         const tag = document.createElement('script');
