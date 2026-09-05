@@ -2,18 +2,20 @@
   "aimyon": {
     "name": "あいみょん",
     "directory": "aimyon",
-    "songPage": "aimyon.html",
+    "songPage": "song.html",
     "image": "img/aimyon.jpg",
     "background": "img/aimyon.jpg",
+    "backgroundCss": "img/aimbackgroundimg.css",
     "accent": "#c3b1bf",
     "hoverAccent": "#a88fa0"
   },
   "mrsgreenapple": {
     "name": "Mrs. GREEN APPLE",
     "directory": "mrsgreenapple",
-    "songPage": "mrsGreenApple.html",
+    "songPage": "song.html",
     "image": "img/mrs.jpg",
     "background": "img/mrs.jpg",
+    "backgroundCss": "img/mrsbackgroundimg.css",
     "accent": "#0d7d36",
     "hoverAccent": "#20d6b5"
   }

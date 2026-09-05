@@ -43,10 +43,10 @@
             top: 0;
             z-index: 900;
             display: flex;
+            align-items: center;
             justify-content: flex-end;
             padding: 1rem 1.25rem;
-            background: rgba(15, 15, 20, 0.62);
-            backdrop-filter: blur(12px);
+            background: transparent;
         }
 
         .home-link {
@@ -126,7 +126,7 @@
     <button class="menu-btn" id="menu-button" type="button">☰ 메뉴</button>
     <div id="sidebar-container"></div>
     <header class="artist-topbar">
-        <a class="home-link" href="index.html">← 홈으로</a>
+        <a class="home-link" href="index.html">홈</a>
     </header>
 
     <article class="start text-center artist-hero">
@@ -136,9 +136,6 @@
             <div class="card rounded-circle mt-5" id="artist-card"></div>
         </div>
 
-        <nav class="mt-4" aria-label="페이지 이동">
-        </nav>
-
         <section class="container mt-5" aria-labelledby="song-list-title">
             <h2 id="song-list-title">노래 목록</h2>
             <p class="mb-3 text-white-50" id="song-count" aria-live="polite"></p>
@@ -147,7 +144,7 @@
     </article>
 
     <script src="songData.js"></script>
-    <script src="artistPage.js"></script>
+    <script src="artistPage.js?v=20260905-song-page"></script>
 </body>
 
 </html>

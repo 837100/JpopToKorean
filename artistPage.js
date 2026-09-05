@@ -12,7 +12,7 @@ function requireJson(response, file) {
 }
 
 Promise.all([
-    fetch('artists.txt').then(response => requireJson(response, 'artists.txt')),
+    fetch('artists.txt?v=20260905-song-page').then(response => requireJson(response, 'artists.txt')),
 ]).then(([artists]) => {
     const artist = artists[artistKey];
     if (!artist) {
@@ -52,7 +52,7 @@ Promise.all([
     Object.entries(songs).forEach(([songKey, song]) => {
         const link = document.createElement('a');
         link.className = 'list-group-item list-group-item-action';
-        link.href = `${artist.songPage}?song=${encodeURIComponent(songKey)}`;
+        link.href = `song.html?artist=${encodeURIComponent(artistKey)}&song=${encodeURIComponent(songKey)}`;
         link.textContent = song.title;
         songList.appendChild(link);
     });
@@ -63,12 +63,11 @@ Promise.all([
     sidebar.innerHTML = `
         <br>
         <br>
-        <a href="index.html">Home</a>
         <a href="artist.html?artist=${encodeURIComponent(artistKey)}" style="font-weight: bold; text-decoration: underline;">${artist.name}</a>
     `;
     Object.entries(songs).forEach(([songKey, song]) => {
         const link = document.createElement('a');
-        link.href = `${artist.songPage}?song=${encodeURIComponent(songKey)}`;
+        link.href = `song.html?artist=${encodeURIComponent(artistKey)}&song=${encodeURIComponent(songKey)}`;
         link.textContent = song.title;
         sidebar.appendChild(link);
     });

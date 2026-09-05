@@ -10,7 +10,7 @@
     padding-top: 20px;
     transition: transform 0.3s ease;
     transform: translateX(-100%); 
-    z-index: 2000;
+    z-index: 4000 !important;
 }
 
 .sidebar.open {
@@ -40,7 +40,7 @@
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
-    z-index: 1000;
+    z-index: 3000;
 }
 
 
