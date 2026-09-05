@@ -51,9 +51,11 @@ songsReady = fetch('artists.txt?v=20260905-song-page')
         `;
         document.head.appendChild(artistColorStyle);
 
+        document.body.style.setProperty('--artist-pastel', artist.backgroundColor);
+
         const backgroundStylesheet = document.createElement('link');
         backgroundStylesheet.rel = 'stylesheet';
-        backgroundStylesheet.href = `${artist.backgroundCss}?v=20260905-layout3`;
+        backgroundStylesheet.href = 'img/songBackground.css?v=20260905-pastel';
         document.head.appendChild(backgroundStylesheet);
 
         return loadArtistSongs(artist.directory).then(data => ({ artist, data }));

@@ -4,8 +4,7 @@
     "directory": "aimyon",
     "songPage": "song.html",
     "image": "img/aimyon.jpg",
-    "background": "img/aimyon.jpg",
-    "backgroundCss": "img/aimbackgroundimg.css",
+    "backgroundColor": "#ead8e3",
     "accent": "#c3b1bf",
     "hoverAccent": "#a88fa0"
   },
@@ -14,8 +13,7 @@
     "directory": "mrsgreenapple",
     "songPage": "song.html",
     "image": "img/mrs.jpg",
-    "background": "img/mrs.jpg",
-    "backgroundCss": "img/mrsbackgroundimg.css",
+    "backgroundColor": "#d7eadb",
     "accent": "#0d7d36",
     "hoverAccent": "#20d6b5"
   }

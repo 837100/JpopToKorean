@@ -28,12 +28,12 @@ Promise.all([
     document.getElementById('artist-card').style.backgroundImage = `url('${artist.image}')`;
     document.getElementById('artist-style').textContent = `
         body {
-            background-image: url('${artist.background}');
+            background: ${artist.backgroundColor};
             --artist-accent: ${artist.accent};
             --artist-hover-accent: ${artist.hoverAccent};
         }
         body::before {
-            background-image: url('${artist.background}');
+            background: ${artist.backgroundColor};
         }
         .card {
             background-image: url('${artist.image}');

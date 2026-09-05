@@ -16,7 +16,9 @@ matchedSongReady.then(matchedSong => {
         video.style.width = '100%';
         video.style.height = '100%';
         video.style.border = '0';
+        video.addEventListener('load', adjustMainMargin, { once: true });
         player.replaceChildren(video);
+        requestAnimationFrame(adjustMainMargin);
 
         const youtubeLink = document.createElement('a');
         youtubeLink.href = matchedSong.videoUrl;
@@ -36,14 +38,15 @@ function adjustMainMargin() {
 
     if (window.matchMedia('(orientation: landscape) and (min-aspect-ratio: 6 / 5)').matches) {
         main.style.marginTop = '0';
+        main.style.paddingTop = '';
         return;
     }
 
     // プレイヤーの高さを読み込んでmargin-topを調整
     const playerHeight = player.offsetHeight;
 
-    // mainのmargin-topをプレイヤーの高さに合うように設定
-    main.style.marginTop = (playerHeight + 5) + 'px';
+    main.style.marginTop = '0';
+    main.style.paddingTop = (playerHeight + 20) + 'px';
 }
 
 //　ページロード時や画面のサイズ変更時実行

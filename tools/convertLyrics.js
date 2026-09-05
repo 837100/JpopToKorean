@@ -4,7 +4,7 @@ const path = require('path');
 const inputPath = process.argv[2];
 
 if (!inputPath) {
-    console.error('사용법: node convertLyrics.js <가사.txt>');
+    console.error('사용법: node tools/convertLyrics.js <가사.txt>');
     process.exit(1);
 }
 
