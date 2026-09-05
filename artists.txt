@@ -1,0 +1,20 @@
+{
+  "aimyon": {
+    "name": "あいみょん",
+    "metadataFile": "aimyon.txt",
+    "songPage": "aimyon.html",
+    "image": "img/aimyon.jpg",
+    "background": "img/aimyon.jpg",
+    "accent": "#c3b1bf",
+    "hoverAccent": "#a88fa0"
+  },
+  "mrsgreenapple": {
+    "name": "Mrs. GREEN APPLE",
+    "metadataFile": "mrsgreenapple.txt",
+    "songPage": "mrsGreenApple.html",
+    "image": "img/mrs.jpg",
+    "background": "img/mrs.jpg",
+    "accent": "#0d7d36",
+    "hoverAccent": "#20d6b5"
+  }
+}
