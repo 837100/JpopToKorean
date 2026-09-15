@@ -10,8 +10,15 @@
     <style>
         .youtube-fallback-link {
             display: block;
-            margin: 0.5rem auto 0;
+            margin: 1rem auto 0;
             text-align: center;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .youtube-fallback-link:hover {
+            color: #000;
         }
 
         .song-home-link {
@@ -19,20 +26,66 @@
             top: 20px;
             right: 20px;
             z-index: 3000;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.65);
+            color: #333;
+            border: 1px solid rgba(0, 0, 0, 0.2);
             border-radius: 999px;
             padding: 0.5rem 1rem;
             font-weight: 700;
             text-decoration: none;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            transition: all 0.2s;
         }
 
         .song-home-link:hover,
         .song-home-link:focus {
-            color: #fff;
+            color: #000;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-decoration: none;
-            background: rgba(0, 0, 0, 0.45);
+        }
+
+        #main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        #song-title {
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: #222;
+        }
+
+        #song-lyrics-container {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        #song-lyrics {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-break: keep-all;
+            color: #444;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+        }
+
+        .artist-back-btn {
+            margin-top: 3rem;
+            border-radius: 30px;
+            padding: 0.6rem 2rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .artist-back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
         }
     </style>
 </head>
@@ -48,12 +101,12 @@
     </header>
     <main id="main">
         <h1 id="song-title" class="text-center">노래 정보를 불러오는 중...</h1>
-        <div id="song-lyrics-container" class="mt-5">
-            <pre id="song-lyrics" class="text-center mt-3" style="font-size: large;"></pre>
+        <div id="song-lyrics-container" class="mt-5 text-center">
+            <pre id="song-lyrics" class="mt-3"></pre>
         </div>
     </main>
     <div class="text-center mb-4">
-        <a id="artist-page-link" class="btn btn-outline-primary" href="">가수 페이지로 돌아가기</a>
+        <a id="artist-page-link" class="btn btn-outline-primary artist-back-btn" href="">가수 페이지로 돌아가기</a>
     </div>
     <div style="position: fixed; bottom:5px; right:5px">
         <a id="next-song" href=""><img src="img/right-arrow.png" title="다음곡" style="width: 50px; height: 50px;" alt="다음곡"> </a>

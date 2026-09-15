@@ -18,6 +18,40 @@
             padding-bottom: 3rem;
         }
 
+        /* Splash Screen Style */
+        #splash-screen {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #EEE;
+            border-bottom-color: #333;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .splash-text {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
         body::before {
             content: "";
             position: fixed;
@@ -123,6 +157,10 @@
 </head>
 
 <body>
+    <div id="splash-screen">
+        <span class="loader"></span>
+        <div class="splash-text">가수 정보를 불러오는 중...</div>
+    </div>
     <button class="menu-btn" id="menu-button" type="button">☰ 메뉴</button>
     <div id="sidebar-container"></div>
     <header class="artist-topbar">

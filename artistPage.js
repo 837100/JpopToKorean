@@ -73,7 +73,19 @@ Promise.all([
     });
     document.getElementById('sidebar-container').appendChild(sidebar);
     document.getElementById('menu-button').onclick = toggleSidebar;
+
+    // Hide splash screen
+    const splash = document.getElementById('splash-screen');
+    if (splash) {
+        splash.style.opacity = '0';
+        splash.style.visibility = 'hidden';
+    }
 }).catch(error => {
     console.error('가수 페이지 로드 중 오류 발생:', error);
     document.getElementById('artist-name').textContent = '가수 정보를 불러오지 못했습니다.';
+
+    const splash = document.getElementById('splash-screen');
+    if (splash) {
+        splash.style.display = 'none';
+    }
 });
