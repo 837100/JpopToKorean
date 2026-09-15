@@ -12,16 +12,24 @@ function loadArtistSongs(artistDirectory) {
             return fetch(`${directory}/${encodeURIComponent(fileName)}`)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(`${directory}/${fileName}을(를) 불러오지 못했습니다: ${response.status}`);
+                        console.warn(`${directory}/${fileName}을(를) 불러오지 못했습니다: ${response.status}`);
+                        return null;
                     }
                     return response.json();
+                })
+                .catch(error => {
+                    console.error(`${directory}/${fileName} 로드 중 네트워크 오류:`, error);
+                    return null;
                 });
         })))
-        .then(songList => Object.fromEntries(songList.map(song => {
-            if (Array.isArray(song.lyricsLines)) {
-                song.lyrics = song.lyricsLines.join('\n');
-            }
+        .then(songList => {
+            const validSongs = songList.filter(song => song !== null);
+            return Object.fromEntries(validSongs.map(song => {
+                if (Array.isArray(song.lyricsLines)) {
+                    song.lyrics = song.lyricsLines.join('\n');
+                }
 
-            return [song.fileName.replace(/\.json$/, ''), song];
-        })));
+                return [song.fileName.replace(/\.json$/, ''), song];
+            }));
+        });
 }
