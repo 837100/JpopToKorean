@@ -15,7 +15,7 @@ if (!fs.existsSync(inputPath)) {
 
 const extension = path.extname(inputPath);
 const baseName = path.basename(inputPath, extension);
-const outputPath = path.join(path.dirname(inputPath), `${baseName}ToJson.txt`);
+const outputPath = path.join(path.dirname(inputPath), `${baseName}.json`);
 const lyrics = fs.readFileSync(inputPath, 'utf8').replace(/\r\n/g, '\n');
 const lyricsLines = lyrics.split('\n');
 
@@ -23,5 +23,14 @@ if (lyricsLines.at(-1) === '') {
     lyricsLines.pop();
 }
 
-fs.writeFileSync(outputPath, JSON.stringify(lyricsLines, null, 2) + '\n', 'utf8');
+const result = {
+    fileName: `${baseName}.json`,
+    title: '',
+    artist: '',
+    videoId: '',
+    videoUrl: '',
+    lyricsLines: lyricsLines
+};
+
+fs.writeFileSync(outputPath, JSON.stringify(result, null, 2) + '\n', 'utf8');
 console.log(`변환 완료: ${outputPath}`);
